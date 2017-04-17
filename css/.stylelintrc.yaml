@@ -1,0 +1,27 @@
+---
+extends: stylelint-config-standard
+plugins: 
+  - stylelint-no-unsupported-browser-features
+rules:
+  string-quotes: double
+  string-no-newline: true
+  selector-pseudo-element-colon-notation: [single, double]
+  at-rule-empty-line-before: null
+  declaration-empty-line-before: never
+  no-duplicate-selectors: true
+  max-nesting-depth: 3
+
+  plugin/no-unsupported-browser-features:  
+    - true
+    - ignore: 
+        - css-resize # IE
+        - flexbox # IE
+        - font-unicode-range # Safari
+        - multicolumn # Not IE
+        - viewport-units # IE
+      browsers: 
+        - last 2 Chrome versions
+        - last 2 Edge versions
+        - last 2 Firefox versions
+        - IE 11
+        - last 2 Safari versions
