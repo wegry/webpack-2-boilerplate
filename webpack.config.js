@@ -30,7 +30,7 @@ module.exports = {
         })
       },
       {
-        test: /\.(woff|woff2|svg|png|ttf|eot|otf)$/,
+        test: /\.(woff|woff2|svg|png|ttf|eot|otf|jpg)$/,
         loader: 'file-loader',
         query: {name: '[path][name]-[hash].[ext]'}
       },
