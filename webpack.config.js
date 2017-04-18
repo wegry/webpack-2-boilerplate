@@ -32,7 +32,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|svg|png|ttf|eot|otf)$/,
         loader: 'file-loader',
-        query: {name: '[path][name]-[hash].[ext]', }
+        query: {name: '[path][name]-[hash].[ext]'}
       },
       {
         test: /\.js$/,
@@ -40,13 +40,13 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: {cacheDirectory: true}
+            // query: {cacheDirectory: true} // This can dramatically speed up builds, but it's tricky to use after a babel version change
           },
           {
             loader: 'eslint-loader',
             query: {
               fix: true,
-              cache: true
+              // cache: true // This can dramatically speed up builds, but it's tricky to use after rule changes
             },
           }
         ]
